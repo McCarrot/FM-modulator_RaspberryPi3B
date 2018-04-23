@@ -6,6 +6,12 @@ from Adafruit_Si4713 import Adafruit_Si4713
 FMSTATION = 10100
 POWER = 90
 
+def readstation():
+	file = open("radioconfig.txt")
+	fmstation = file.readline()
+	file.close()
+	return fmstation
+
 def printInfo():
 	radio.readASQ()
 	print "ASQ:", hex(radio.currASQ), "- InLevel:", radio.currInLevel, "dBfs -",
@@ -18,6 +24,8 @@ if not radio.begin():
 	print "error! couldn't begin!"
 
 else:
+	FMSTATION = readstation()
+	FMSTATION = int(FMSTATION)
 
 	radio.readTuneMeasure(FMSTATION)
 	printInfo()
@@ -29,18 +37,20 @@ else:
 	radio.setRDSbuffer(" -- empty -- ")
 
 	while True:
-
-		
+		FMSTATION_NEW = int(readstation())
+		if FMSTATION != FMSTATION_NEW:
+			FMSTATION = FMSTATION_NEW
+			radio.tuneFM(FMSTATION)
+			radio.setRDSstation("- GNR -")
 		printInfo()
 
-		radio.setRDSstation("- GNR -")
-		sleep(10)
+		sleep(3)
 
-		radio.setRDSstation("Galaxy")
-		sleep(5)
+		# radio.setRDSstation("Galaxy")
+		# sleep(5)
 
-		radio.setRDSstation("News")
-		sleep(5)
+		# radio.setRDSstation("News")
+		# sleep(5)
 
-		radio.setRDSstation("Radio")
-		sleep(5)
+		# radio.setRDSstation("Radio")
+		# sleep(5)
