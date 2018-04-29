@@ -1,16 +1,19 @@
 #!/usr/bin/python2
 
 from time import sleep
-from Adafruit_Si4713 import Adafruit_Si4713
 import csv
+from Adafruit_Si4713 import Adafruit_Si4713
 
 FMSTATION = 10100
-POWER = 90
+POWER = 100
 
 def readstation():
-	file = open("radioconfig.txt")
-	fmstation = file.readline()
-	file.close()
+	# with open('siggen.csv') as csvfile:
+	# 	reader = csv.reader(csvfile, delimiter=',')
+	# 	for row in reader:
+	# 		print(row[1])
+		
+	fmstation = 9485
 	return fmstation
 
 def printInfo():
