@@ -5,7 +5,7 @@ import csv
 from Adafruit_Si4713 import Adafruit_Si4713
 
 FMSTATION = 10100
-POWER = 100
+POWER = 88
 
 def readstation():
 	# with open('siggen.csv') as csvfile:
