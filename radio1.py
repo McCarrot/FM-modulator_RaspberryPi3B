@@ -5,7 +5,7 @@ from Adafruit_Si4713 import Adafruit_Si4713
 import csv
 
 FMSTATION = 10100
-POWER = 90
+POWER = 88
 
 def readstation():
 	file = open("radioconfig.txt")
