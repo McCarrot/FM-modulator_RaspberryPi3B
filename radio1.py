@@ -13,7 +13,7 @@ def readstation():
 	# 	for row in reader:
 	# 		print(row[1])
 		
-	fmstation = 9485
+	fmstation = 10000
 	return fmstation
 
 def printInfo():
