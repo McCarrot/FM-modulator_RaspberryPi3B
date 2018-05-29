@@ -56,12 +56,12 @@ else:
 
 		sleep(3)
 
-		# radio.setRDSstation("Galaxy")
+		# radio.setRDSstation("Inline")
 		# sleep(5)
 
-		# radio.setRDSstation("News")
+		# radio.setRDSstation("DAB")
 		# sleep(5)
 
-		# radio.setRDSstation("Radio")
+		# radio.setRDSstation("Adapter")
 		# sleep(5)
 
